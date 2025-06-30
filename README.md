@@ -27,10 +27,10 @@ Menu:
 
 ## ✅ Current Functionality (Week 1–2)
 
-- [x] Print to screen  
-- [x] Clear the screen  
-- [x] Accept user input  
-- [x] Store chicken names in a Python list  
+- [ ] Print to screen  
+- [ ] Clear the screen  
+- [ ] Accept user input  
+- [ ] Store chicken names in a Python list  
 
 > **Example Chicken Names** used for demonstration:
 > George, Fleur, Devon, Casey, Marigold, Apple Mint
@@ -65,9 +65,9 @@ Menu:
 4. Run the main program using:  
    ```bash
    python app.py
-````
 
----
+
+
 
 ## 🗂 Project Structure (Subject to Change)
 
@@ -111,12 +111,12 @@ This project is being tracked and documented via **commits** and this `README.md
 
 Feel free to fork or clone the repo to try the application yourself.
 
----
+
 
 ## 📅 Deadline
 
 **4 Weeks from Project Initiation**
 📌 *Expected Completion: \[30/06/2025 + 4 Weeks]*
 
----
+
 
