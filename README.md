@@ -1,8 +1,3 @@
-Here's a `README.md` file for your chicken breeder CLI project, clearly explaining the purpose, timeline, tools, and expected deliverables:
-
----
-
-```markdown
 # 🐔 Chicken Records CLI Application
 
 ## 📌 Project Overview
