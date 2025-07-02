@@ -63,7 +63,7 @@ Menu:
 2. Install **VS Code**  
 3. Clone or download this repository  
 4. Run the main program using:  
-   ```bash
+```bash
    python app.py
 ````
 
@@ -131,5 +131,3 @@ Feel free to fork or clone the repo to try the application yourself.
 
 **4 Weeks from Project Initiation**
 📌 *Expected Completion: \[30/06/2025 + 4 Weeks]*
-
-```
