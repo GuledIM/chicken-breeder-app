@@ -1,4 +1,4 @@
-# 🐔 Chicken Records CLI ApplicationAdd commentMore actions
+# 🐔 Chicken Records CLI Application
 
 ## 📌 Project Overview
 
