@@ -71,7 +71,6 @@ Menu:
 
 ## 🗂 Project Structure (Subject to Change)
 
-```
 chicken-records-cli/
 │
 ├── week_1/
