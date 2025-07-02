@@ -131,4 +131,3 @@ Feel free to fork or clone the repo to try the application yourself.
 **4 Weeks from Project Initiation**
 📌 *Expected Completion: \[30/06/2025 + 4 Weeks]*
 
----
