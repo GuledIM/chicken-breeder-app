@@ -67,7 +67,6 @@ Menu:
    python app.py
 ````
 
----
 
 ## 🗂 Project Structure (Subject to Change)
 
