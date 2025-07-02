@@ -1,0 +1,8 @@
+Initial commit with hardcoded CLI menu and basic CRUD functions for managing chickens:
+
+- Implemented print (list), add, update, and delete functions for chickens.
+- Menu is currently hardcoded with input prompts and simple logic.
+- Next steps:
+  * Add automated testing with pytest and input/output mocking.
+  * Add input validation to improve robustness.
+  * Refactor code to use Classes and OOP principles for scalability and maintainability.
