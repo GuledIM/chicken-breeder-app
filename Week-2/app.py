@@ -34,50 +34,36 @@ def main():
             print("Invalid Input. Enter an integer like 1 or 2.")
 
 
+class  Chicken:
+    def __init__(self, name, age, breed):
+        self.name = name
+        self.breed = breed
+        self.age = age
 
-chickens= []
-
-def clr_terminal():
-    os.system('cls' if os.name == 'nt' else 'clear')#clear terminal
-
-
-def chicken_list():
-    for idx, chicken in enumerate(chickens):
-        print({idx:chicken})
-
-def add_chicken():
+class ChickenManager:
+    def __init__(self):
+        self.chickens = []
     
-    while True:
+    def chicken_list(self):
+        if not self.chickens:
+            print("No Chickens in List! Please add before viewing.")
+        else:
+            for idx, chicken in enumerate(self.chickens):
+                print({idx:chicken})
+    
+    def add_chicken(self):
+    
+        while True:
 
-        chicken_name = input("Type the name of the chicken you would like to add:\n")
+            name = input("Enter the name of the Chicken:\n")
+            breed = input("Enter the breed of this Chicken:\n")
+            age = input("Enter the age of the chicken in weeks:\n")
 
-        chickens.append(chicken_name)
-        return
+            new_chicken = Chicken(name,breed,age)
 
-def update_chickens():        
-
-    while True:
-        
-        chicken_list()
-
-        choose_chicken = input("Select which chicken's name would you like to change:\n")
-
-        new_chicken_name = input("Enter the updated name for this chicken:\n")
-
-        chickens[int(choose_chicken)] = new_chicken_name
-        return
-
-def delete_chicken():
-
-    while True:
-
-        chicken_list()
-
-        choose_chicken = input("Select which chicken you would you like to delete:\n")
-
-        chickens.pop(int(choose_chicken))
-        return
+            self.chickens.append(new_chicken)
+            return
 
 
-if __name__ == '__main__':
-    main()
+
+
