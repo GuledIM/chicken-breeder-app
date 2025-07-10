@@ -1,0 +1,10 @@
+Updates:
++ Added Full CRUD 
++ Implemented OOP using classes
+
+
+Next steps:
+
+= Validation and Error handling whilst testing. 
+= Persist to CSV's 
+= Then Persist to MYSQL DB. 
