@@ -1,0 +1,13 @@
+Week 3, Day 1 - Added persistence to CSVs.
+
+
+
+
+
+Tasks for the remainder of the week.
+
+- Validation will be done using reuasable functions from the mini-0project completed earlier this year.
+
+- Following the validation will change the persistence to a MySQL DB. 
+
+- Testing and preparation for the presenation. 
