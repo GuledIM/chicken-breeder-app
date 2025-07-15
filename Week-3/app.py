@@ -1,6 +1,7 @@
 import os
 import time
 import csv
+from functions import *
 
 def main():
 
@@ -68,10 +69,27 @@ class ChickenManager:
                 print(chicken)
     
     def add_chicken(self):
-    
-            name = input("Enter the name of the Chicken:\n")
-            breed = input("Enter the breed of this Chicken:\n")
-            age = input("Enter the age of the chicken in weeks:\n")
+            
+            clr_terminal()
+            
+            while True:
+                confirmation=integer_input_validation("Are you sure you would like to add a record? \n1. Yes or 2. No.\n")
+
+                if confirmation == 1:
+                    break
+
+                elif confirmation == 2:
+                    print("Cancelled. Returning to the Main Menu.")
+                    return
+
+                else:
+                    print("Invalid selection. Please select one of the two options.\n")
+            
+            clr_terminal()
+                
+            name = string_input_validation("Enter the name of the Chicken:\n")
+            breed = string_input_validation("Enter the breed of this Chicken:\n")
+            age = integer_input_validation("Enter the age of the chicken in weeks:\n")
 
             new_chicken = Chicken(self.next_id, name, breed, age) #Creating the 
 
@@ -83,24 +101,69 @@ class ChickenManager:
 
     
     def update_chicken(self):
+
+        clr_terminal()
+
+
+        while True:
+            
+            
+
+            confirmation=integer_input_validation("Are you sure you would like to update a record? \n1. Yes or 2. No.\n")
         
-        chicken_id = int(input("Enter ID of chicken to update: ")) #User selects ID of Chicken to edit
+            if confirmation == 1:
+                break
+
+            elif confirmation == 2:
+                print("Cancelled. Returning to the Main Menu.")
+                return
+        
+            else:
+                print("Invalid selection. Please select one of the two options.\n")
+
+        clr_terminal()
+        
+        ChickenManager.chicken_list(self)
+
+        chicken_id = integer_input_validation("Enter ID of chicken to update: ") #User selects ID of Chicken to edit
 
         for chicken in self.chickens:
 
             if chicken.id == chicken_id:
 
-                chicken.name = input("Enter new name: ")
-                chicken.breed = input("Enter new breed: ")
-                chicken.age = int(input("Enter new age (weeks): "))
+                chicken.name = string_input_validation("Enter new name: ")
+                chicken.breed = string_input_validation("Enter new breed: ")
+                chicken.age = integer_input_validation("Enter new age (weeks): ")
 
                 print("Chicken record updated.")
 
                 return
     
+    
     def delete_chicken(self):
 
-        chicken_id = int(input("Enter ID of chicken to delete: "))
+        clr_terminal()
+
+        ChickenManager.chicken_list(self)
+
+
+        while True:
+            confirmation=integer_input_validation("Are you sure you would like to delete a record? \n1. Yes or 2. No.\n")
+        
+            if confirmation == 1:
+                break
+
+            elif confirmation == 2:
+                print("Cancelled. Returning to the Main Menu.")
+                return
+        
+            else:
+                print("Invalid selection. Please select one of the two options.\n")
+        
+        clr_terminal()
+
+
+        chicken_id = integer_input_validation("Enter ID of chicken to delete: ")
 
         for chicken in self.chickens:
 
@@ -111,7 +174,7 @@ class ChickenManager:
                 print("Chicken record deleted.")
                 return
     
-    def save_to_csv(self, filename='chickens.csv'): # persist to csv upon closing application 
+    def save_to_csv(self, filename=r"C:\Users\GuledM(DE-LON16)\Documents\projects\chicker-breeder-app\Week-3\chickens.csv"): # persist to csv upon closing application 
 
         with open(filename, 'w', newline = '' ) as file:
             writer = csv.writer(file)
@@ -119,7 +182,7 @@ class ChickenManager:
             for c in self.chickens:
                 writer.writerow([c.id, c.name, c.breed, c.age])
     
-    def load_from_csv(self, filename="chickens.csv"): #upon launching the program we load from the csv file
+    def load_from_csv(self, filename=r"C:\Users\GuledM(DE-LON16)\Documents\projects\chicker-breeder-app\Week-3\chickens.csv"): #upon launching the program we load from the csv file
 
         try:
 
@@ -134,8 +197,9 @@ class ChickenManager:
                     )
                     self.chickens.append(new_chicken) #populating our list again
                     self.next_id = max(self.next_id, new_chicken.id + 1) # stps the id from being duplicated as it always starts again from 1
+        
         except FileNotFoundError:
-            pass  
+            print("File not found! Check if you are in the correct directory")  
 
 
 
