@@ -174,7 +174,7 @@ class ChickenManager:
                 print("Chicken record deleted.")
                 return
     
-    def save_to_csv(self, filename=r"C:\Users\GuledM(DE-LON16)\Documents\projects\chicker-breeder-app\Week-3\chickens.csv"): # persist to csv upon closing application 
+    def save_to_csv(self, filename=r"C:\Users\GuledM(DE-LON16)\Documents\projects\chicker-breeder-app\Week-3\data\chickens.csv"): # persist to csv upon closing application 
 
         with open(filename, 'w', newline = '' ) as file:
             writer = csv.writer(file)
@@ -182,7 +182,7 @@ class ChickenManager:
             for c in self.chickens:
                 writer.writerow([c.id, c.name, c.breed, c.age])
     
-    def load_from_csv(self, filename=r"C:\Users\GuledM(DE-LON16)\Documents\projects\chicker-breeder-app\Week-3\chickens.csv"): #upon launching the program we load from the csv file
+    def load_from_csv(self, filename=r"C:\Users\GuledM(DE-LON16)\Documents\projects\chicker-breeder-app\Week-3\data\chickens.csv"): #upon launching the program we load from the csv file
 
         try:
 

@@ -88,7 +88,7 @@ chicken-records-cli/
 │   ├── notes/
 │   │   └── notes.txt
 │   └── data/
-│       └── (optional files later)
+│       └── chickens.csv
 │
 └── README.md
 ```

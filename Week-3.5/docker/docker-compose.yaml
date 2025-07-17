@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  db:
+    image: mysql
+    container_name: mysql_container_etl
+    restart: always
+    environment:
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_DATABASE: "${MYSQL_DB}"
+    ports:
+      - "3306:3306"
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - type: volume
+        source: my_db
+        target: /var/lib/mysql
+  
+  adminer:
+    image: adminer
+    container_name: adminer_container_etl
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  my_db:

@@ -1,0 +1,14 @@
+Week 3, Day 1 - Added persistence to CSVs.
+
+Week 3, Day 2 - Added Input String and Integer Validation. 
+              - Added a confirmation to all functions 
+              - Added function to clr terminal after each function 
+
+
+
+
+
+Tasks for the remainder of the week.
+- Following the validation will change the persistence to a MySQL DB. 
+
+- Testing and preparation for the presenation. 
