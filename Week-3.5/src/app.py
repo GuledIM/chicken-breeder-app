@@ -59,15 +59,26 @@ class ChickenManager:
         self.next_id = 1 #Simple unique identifier for new entries, might implemet GUID in the future with hashing
 
     
-    def chicken_list(self):
-        if not self.chickens:
+    def print_all_chickens(self):
 
-            print("No Chickens in List! Please add before viewing.")
+        clr_terminal()
 
-        else:
-            for chicken in self.chickens:
-                print(chicken)
+        cursor.execute("SELECT * FROM chickens")
+
+        for row in cursor.fetchall():
+            print(row)
     
+    def populate_table_from_list(self):
+        
+        # Populate from the list loaded from CSV as a back up 
+
+        for chicken in self.chickens:
+            cursor.execute("INSERT IGNORE INTO chickens (id, name, breed, age (weeks)) " \
+            "VALUES (%s, %s, %s, %s)", 
+            (chicken.id, chicken.name, chicken.breed, chicken.age))
+
+            conn.commit()
+
     def add_chicken(self):
             
             clr_terminal()
@@ -91,7 +102,13 @@ class ChickenManager:
             breed = string_input_validation("Enter the breed of this Chicken:\n")
             age = integer_input_validation("Enter the age of the chicken in weeks:\n")
 
-            new_chicken = Chicken(self.next_id, name, breed, age) #Creating the 
+            new_chicken = Chicken(self.next_id, name, breed, age) 
+
+            cursor.execute("INSERT INTO chickens (id, name, breed, age (weeks)) " \
+            "VALUES (%s, %s, %s, %s)", 
+            (self.next_id, name, breed, age)) # Add to the database
+
+            conn.commit()
 
             self.chickens.append(new_chicken) #Add to list, in future save as CSV then finally persist to MYSQL DB
 

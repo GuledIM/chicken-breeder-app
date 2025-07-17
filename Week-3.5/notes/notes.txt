@@ -5,7 +5,8 @@ Week 3, Day 2 - Added Input String and Integer Validation.
               - Added function to clr terminal after each function 
 
 Week 3, Day 4 - Started migraction to MySQL DB caoming across this error :
-"Failed to connect: Authentication plugin 'caching_sha2_password' is not supported" looking to fix this now. 
+"Failed to connect: Authentication plugin 'caching_sha2_password' is not supported" looking to fix this now. - RESOLVED
+              - Migarted the Create and Read functions to do so on the DB. Update and Delete are left.
 
 
 

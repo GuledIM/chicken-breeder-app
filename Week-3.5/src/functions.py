@@ -90,4 +90,13 @@ def close_db_connection(cursor, conn):
         conn.close()
     print("Database connection closed.")
 
+def create_table():
+    tables_sql =f""" CREATE TABLE chickens (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    breed VARCHAR(50),
+    age (weeks) INT
+);"""
+    cursor.execute(tables_sql)
+
 
