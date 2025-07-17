@@ -1,4 +1,4 @@
-import psycopg2 as psycopg
+import mysql.connector
 import os
 from dotenv import load_dotenv
 
@@ -64,19 +64,21 @@ user_password = os.environ.get("MYSQL_PASSWORD")
 def db_connection():
     print('Opening connection...')
     try:
-        conn=psycopg.connect(f"""
-            host={host_name}
-            dbname={database_name}
-            user={user_name}
-            password={user_password}
-            """)
+        conn = mysql.connector.connect(
+            host=host_name,
+            database=database_name, 
+            user=user_name,
+            password=user_password
+        )
         print("Connection established!")
-        cursor=conn.cursor()
+        cursor = conn.cursor()
         print("Cursor opened...")
-        return conn,cursor
 
-    except Exception as ex:
-        print('Failed to:', ex)
+
+        return conn, cursor
+        
+    except Exception as e:
+        print(f"Failed to connect: {e}")
 
 conn,cursor=db_connection()
 
