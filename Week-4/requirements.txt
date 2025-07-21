@@ -1,0 +1,3 @@
+# using v2 (not the latest v3) as this is good for windows, ubuntu and mac
+mysql.connector
+python-dotenv==0.15.0

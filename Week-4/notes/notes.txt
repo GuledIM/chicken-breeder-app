@@ -1,0 +1,2 @@
+Completed migration from CSV to MySQL database. 
+Made it more modular by changing harded coded parts into utility functions
