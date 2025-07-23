@@ -40,16 +40,13 @@ def main():
 
 
 class  Chicken:
-    def __init__(self, id, name, breed, age):
-        self.id = id #added Id to be able to edit 
+    def __init__(self, name, breed, age):
         self.name = name
         self.breed = breed
         self.age = age
     
 
 class ChickenManager:
-    def __init__(self):
-        self.next_id = 1 #Simple unique identifier for new entries, might implemet GUID in the future with hashing
 
     
     def print_all_chickens(self):
@@ -60,6 +57,8 @@ class ChickenManager:
 
         for row in cursor.fetchall():
             print(row)
+        time.sleep(5)
+        
     
     def add_chicken(self):
             
@@ -76,15 +75,13 @@ class ChickenManager:
             breed = string_input_validation("Enter the breed of this Chicken:\n")
             age = integer_input_validation("Enter the age of the chicken in weeks:\n")
 
-            Chicken(self.next_id, name, breed, age) 
 
-            cursor.execute("INSERT INTO chickens (id, name, breed, age)" \
-            "VALUES (%s, %s, %s, %s)", 
-            (self.next_id, name, breed, age))
+            cursor.execute("INSERT INTO chickens (name, breed, age)" \
+            "VALUES (%s, %s, %s)", 
+            (name, breed, age))
 
             conn.commit()
 
-            self.next_id += 1 # +1 in preparation for next entry 
 
             print("Chicken record created.") # Confirmation msg
 
