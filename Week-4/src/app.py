@@ -52,7 +52,9 @@ class ChickenManager:
     
     def print_all_chickens(self):
 
+
         clr_terminal()
+        print("Viewing all chickens...")
 
         cursor.execute("SELECT * FROM chickens")
 
@@ -63,6 +65,7 @@ class ChickenManager:
     
     def add_chicken(self):
             
+            
             clr_terminal()
             
             if confirmation("Are you sure you would like to continue to add a new entry?") == 2:
@@ -71,6 +74,8 @@ class ChickenManager:
              return 
             
             clr_terminal()
+            print("Adding a new records...")
+            
                 
             name = string_input_validation("Enter the name of the Chicken:\n")
             breed = string_input_validation("Enter the breed of this Chicken:\n")
@@ -101,6 +106,8 @@ class ChickenManager:
         
         ChickenManager.print_all_chickens(self)
 
+        print("Updating chicken records...")
+
         chicken_id = user_ID_selection_validation('chickens',"Enter ID of chicken to update: ") #User selects ID of Chicken to edit
 
         chicken_name = string_input_validation("Enter new name: ")
@@ -126,6 +133,8 @@ class ChickenManager:
             return
         
         clr_terminal()
+
+        print("Deleting a chicken record...")
 
         ChickenManager.print_all_chickens(self)
 
