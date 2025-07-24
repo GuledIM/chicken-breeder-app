@@ -130,4 +130,5 @@ Feel free to fork or clone the repo to try the application yourself.
 ## 📅 Deadline
 
 **4 Weeks from Project Initiation**
-📌 *Expected Completion: \[30/06/2025 + 4 Weeks]*
+📌 *Expected Completion: \[30/07/2025 + 4 Weeks]*
+    *Actual Completion: \[23/07/2025]*
