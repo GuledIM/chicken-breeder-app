@@ -114,7 +114,7 @@ def close_db_connection(cursor, conn):
     print("Database connection closed.")
 
 def create_table():
-    tables_sql =f"""CREATE TABLE chickens (
+    tables_sql =f"""CREATE TABLE IF NOT EXISTS chickens (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50),
     breed VARCHAR(50),

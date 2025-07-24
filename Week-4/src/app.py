@@ -23,6 +23,7 @@ def main():
                 print("Closing down...")
                 conn.close()
                 cursor.close()
+                create_table()
                 exit() #exit the loop after printing closing down
                 time.sleep(2) #delay the clearing of the terminal
                 clr_terminal()
