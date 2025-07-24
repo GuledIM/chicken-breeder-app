@@ -116,8 +116,11 @@ class ChickenManager:
 
         chicken_age = integer_input_validation("Enter new age (weeks): ")
         
-        cursor.execute(f"UPDATE chickens SET name = '{chicken_name}', breed = '{chicken_breed}', age = '{chicken_age}' WHERE id = {chicken_id}")
-        
+        cursor.execute(
+            "UPDATE chickens SET name = %s, breed = %s, age = %s WHERE id = %s",
+            (chicken_name, chicken_breed, chicken_age, chicken_id)
+        )
+
         print("Chicken record updated.")
         return
         
@@ -140,7 +143,7 @@ class ChickenManager:
 
         selected_id = user_ID_selection_validation('chickens',"Enter ID of the chicken you would like to delete:\n")
 
-        cursor.execute(f"DELETE FROM chickens WHERE id = {selected_id}")
+        cursor.execute("DELETE FROM chickens WHERE id = %s", (selected_id,))
 
         conn.commit()
         
