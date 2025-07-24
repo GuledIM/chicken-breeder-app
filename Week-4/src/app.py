@@ -5,6 +5,8 @@ def main():
 
     manager = ChickenManager()
 
+    create_table()
+
     while True: 
         
         print("\n\tMain Menu:")
@@ -23,7 +25,6 @@ def main():
                 print("Closing down...")
                 conn.close()
                 cursor.close()
-                create_table()
                 exit() #exit the loop after printing closing down
                 time.sleep(2) #delay the clearing of the terminal
                 clr_terminal()
