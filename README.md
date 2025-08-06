@@ -169,7 +169,7 @@ Over the course of this project, I implemented a simple object-oriented chicken 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/chicken-manager.git
+   git clone https://github.com/GuledIM/chicken-breeder-app.git
    cd chicken-manager
    ```
 
