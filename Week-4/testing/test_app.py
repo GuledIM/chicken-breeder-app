@@ -1,5 +1,5 @@
 import pytest
-from functions import *
+from src.functions import *
 
 
 

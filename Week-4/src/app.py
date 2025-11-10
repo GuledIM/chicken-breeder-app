@@ -1,5 +1,5 @@
 import time
-from functions import *
+from src.functions import *
 
 def main():
 
